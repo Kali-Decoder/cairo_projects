@@ -49,6 +49,7 @@ mod StakeContract {
 
     #[external(v0)]
     impl StakeContract of super::IStakeTrait<ContractState> {
+       
         fn getStalkeAmount(self:@ContractState, user_address: ContractAddress) -> u256 {
             let amount = self.user_stake_amounts.read(user_address);
             amount
